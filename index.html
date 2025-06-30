@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linguagens e Engines – Explore o Mundo da Programação</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="index.css?v=2025060905" />
+    <link rel="icon" href="imagens/Projeto O.I icon.png" type="image/x-icon">
+    <style>
+        /* Estilos específicos para a página Home */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagens/hero-background.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: background 0.3s ease;
+        }
+
+        body.dark-mode .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('imagens/hero-background.jpg') no-repeat center center/cover;
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #49b146;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            line-height: 1.5;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: #49b146;
+            color: #424147;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero-button:hover {
+            background-color: #3a8e34;
+            color: white;
+        }
+
+        .content-section {
+            padding: 40px 4%;
+            text-align: center;
+            background-color: inherit; /* Herdará do body para se adaptar ao dark mode */
+            color: inherit; /* Herdará do body para se adaptar ao dark mode */
+            margin-bottom: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        body.dark-mode .content-section {
+            background-color: #2b2b2b;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+
+        .content-section h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            font-weight: 700;
+            color: #49b146;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* REMOVIDO: Estilos de grid para .feature-cards daqui, pois agora serão gerenciados pelo .feature-cards-container no index.css com flexbox. */
+
+        .feature-card {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center; /* CENTRALIZAR TEXTO AQUI */
+            /* ADICIONADO: Display flex e flex-direction para o card individual, alinhando o botão no final */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        body.dark-mode .feature-card {
+            background-color: #424147;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #49b146;
+        }
+
+        .feature-card p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            text-align: center; /* CENTRALIZAR TEXTO AQUI TAMBÉM */
+            max-width: none;
+            flex-grow: 1; /* Permite que o parágrafo ocupe o espaço extra para empurrar o botão */
+        }
+
+        .feature-card a {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: auto; /* ADICIONADO: Empurra o botão para o final do card */
+        }
+        body.dark-mode .feature-card a {
+            background-color: #28a745;
+        }
+
+        .feature-card a:hover {
+            background-color: #0056b3;
+        }
+        body.dark-mode .feature-card a:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>  
+
+    <header>
+        <div class="settings-container">
+            <button class="settings-button" aria-label="Abrir menu de configurações">
+                <i class="bi bi-gear-fill"></i>
+            </button>
+            <div class="settings-menu">
+                <button id="theme-toggle">Tema Escuro</button>
+            </div>
+        </div>
+
+        <section class="top-header">
+            <div class="interface">
+                <div class="logotipo">
+                    <a href="index.html">
+                        <img src="imagens/IFSC_horizontal_marca2015_PNG (1) - Editado.png" alt="logotipo" />
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/mod3tds/" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+                    <a href="#" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
+                    <a href="https://www.facebook.com/ifscchapeco/?locale=pt_BR" target="_blank"><button><i class="bi bi-facebook"></i></button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-header">
+            <div class="interface">
+                <nav class="menu">
+                    <button class="menu-toggle" aria-label="Abrir menu">
+                        <i class="bi bi-list"></i> </button>
+                    <ul class="main-nav-list"> 
+                        <li><a href="index.html" class="active">HOME</a></li>
+                        <li><a href="sobre.html">SOBRE NÓS</a></li>
+                        <li><a href="engines.html">ENGINES</a></li>
+                        <li class="drop-hover">
+                            <a href="#">LINGUAGENS <i class="bi bi-caret-down-fill"></i></a>
+                            <div class="drop">
+                                <a href="html.html">HTML</a>
+                                <a href="css.html">CSS</a>
+                                <a href="javascript.html">JAVASCRIPT</a>
+                                <a href="python.html">PYTHON</a>
+                                <a href="java.html">JAVA</a>
+                                <a href="brainfuck.html">BRAINFUCK</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Desvende o Universo da Programação e do Desenvolvimento</h1>
+            <p>Seja bem-vindo ao seu portal definitivo para explorar as mais diversas linguagens de programação e as poderosas engines que impulsionam a inovação tecnológica. Do básico ao avançado, descubra o que move o mundo digital.</p>
+            <a href="#main-content-start" class="hero-button">Comece a Explorar!</a> 
+        </section>
+
+        <section id="main-content-start" class="content-section interface">
+            <h2>O Seu Guia Completo para o Mundo da Tecnologia</h2>
+            <p>Navegue por um conteúdo rico e detalhado sobre as **linguagens de programação** que moldam a web, os aplicativos e a inteligência artificial. Entenda seus fundamentos, aplicações e descubra qual delas é a ideal para o seu próximo projeto.</p>
+            <p>Além disso, explore o fascinante universo das **engines de desenvolvimento**, ferramentas essenciais para criar jogos imersivos, simulações complexas e experiências interativas que desafiam a imaginação.</p>
+            <img src="imagens/ifsc-campus-chapeco.jpg" alt="IFSC Campus Chapecó" class="content-image" />
+        </section>
+
+        <section class="content-section interface">
+            <h2>Nossas Principais Áreas de Conteúdo</h2>
+            <section class="feature-cards-container">
+                <div class="feature-card">
+                    <h3>Linguagens de Programação</h3>
+                    <p>Conheça as sintaxes, os paradigmas e as aplicações das linguagens mais influentes do mercado. De Python a JavaScript, desvende os segredos do código.</p>
+                    <a href="html.html" class="feature-button">Ver Linguagens</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Engines de Desenvolvimento</h3>
+                    <p>Descubra as ferramentas que dão vida a jogos e aplicações interativas. Unity, Unreal Engine e muito mais, tudo em detalhes.</p>
+                    <a href="engines.html" class="feature-button">Ver Engines</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Sobre o Projeto</h3>
+                    <p>Entenda a missão do nosso projeto e conheça a equipe de entusiastas por trás de todo este conteúdo.</p>
+                    <a href="sobre.html" class="feature-button">Conhecer a Equipe</a>
+                </div>
+            </section> </section>
+    </main>
+
+    <footer>
+        <h4>©2025 By DavidjGreens & Enzo Brancher</h4> 
+    </footer>
+
+    <script src="https://kit.fontawesome.com/0b6d1a1fba.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>
