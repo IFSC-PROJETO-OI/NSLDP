@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sobre Nós – Conheça a Equipe</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="index.css?v=2025060907" />
+    <link rel="icon" href="imagens/sobre nós icon.png" type="image/x-icon">
+    <style>
+        /* Estilos específicos para a página Sobre Nós */
+        main {
+            padding: 50px 4%;
+            background-color: inherit;
+            color: inherit;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #49b146; /* Cor verde para os títulos */
+        }
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* REMOVIDO: Estilos de layout para .team-container (display, grid-template-columns, gap)
+           pois agora serão gerenciados pelo .member-cards-container no index.css com flexbox. */
+
+        .member-card {
+            background-color: #5f5e64;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Para empurrar o áudio e botão para baixo */
+        }
+        /* Ajuste para modo escuro */
+        body.dark-mode .member-card {
+            background-color: #333236;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px auto;
+            border: 3px solid #49b146;
+        }
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #49b146;
+        }
+        .member-desc {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            min-height: 60px; /* Mantém uma altura mínima para o texto */
+            flex-grow: 1; /* Permite que o texto ocupe o espaço disponível */
+            display: flex;
+            align-items: center; /* Centraliza o texto verticalmente */
+            justify-content: center; /* Centraliza o texto horizontalmente */
+            text-align: center;
+        }
+        /* NOVO: Estilos para o player de áudio DENTRO DESTE BLOCO <style> */
+        /* Note: Estes estilos já foram movidos para o index.css na última atualização,
+           mas se você deseja mantê-los aqui para especificidade desta página, pode fazer.
+           Se quiser que o index.css controle, remova-os daqui. */
+        .member-card audio {
+            width: 100%; /* Ocupa a largura total do card */
+            margin-top: 15px; /* Espaçamento acima do player */
+            margin-bottom: 15px; /* Espaçamento abaixo do player e acima do botão */
+            height: 30px; /* Altura para manter compacto */
+            background-color: #e0e0e0; /* Cor de fundo no tema CLARO */
+            border-radius: 5px;
+            outline: none; /* Remove a borda de foco padrão */
+        }
+        body.dark-mode .member-card audio {
+            background-color: #333; /* Fundo mais escuro para o player no tema ESCURO */
+        }
+        /* Estilizando os controles internos do player (pode não ser universal) */
+        .member-card audio::-webkit-media-controls-panel {
+            background-color: #49b146;
+            color: #424147;
+        }
+        body.dark-mode .member-card audio::-webkit-media-controls-panel {
+            background-color: #388e3c;
+            color: #eee;
+        }
+        .member-card audio::-webkit-media-controls-play-button,
+        .member-card audio::-webkit-media-controls-volume-slider {
+            color: inherit;
+        }
+        .member-card audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+            background-color: #424147;
+        }
+        body.dark-mode .member-card audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+            background-color: #eee;
+        }
+        /* FIM DOS NOVOS ESTILOS PARA ÁUDIO */
+
+        .instagram-btn {
+            background-color: #49b146;
+            border: none;
+            color: #424147;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: auto; /* Empurra o botão para o final do card */
+        }
+        .instagram-btn:hover {
+            background-color: #3a8e34;
+            color: white;
+        }
+        /* Ajuste para modo escuro */
+        body.dark-mode .instagram-btn {
+            background-color: #388e3c; /* Verde mais escuro para o botão no tema ESCURO */
+            color: #eee; /* Cor do texto clara no botão ESCURO */
+        }
+        body.dark-mode .instagram-btn:hover {
+            background-color: #218838; /* Verde ainda mais escuro no hover do tema ESCURO */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div> 
+    <header>
+        <div class="settings-container">
+            <button class="settings-button" aria-label="Abrir menu de configurações">
+                <i class="bi bi-gear-fill"></i>
+            </button>
+            <div class="settings-menu">
+                <button id="theme-toggle">Tema Escuro</button>
+            </div>
+        </div>
+
+        <section class="top-header">
+            <div class="interface">
+                <div class="logotipo">
+                    <a href="index.html">
+                        <img src="imagens/IFSC_horizontal_marca2015_PNG (1) - Editado.png" alt="logotipo" />
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/mod3tds/" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+                    <a href="#" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
+                    <a href="https://www.facebook.com/ifscchapeco/?locale=pt_BR" target="_blank"><button><i class="bi bi-facebook"></i></button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-header">
+            <div class="interface">
+                <nav class="menu">
+                    <button class="menu-toggle" aria-label="Abrir menu">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <ul class="main-nav-list"> <li><a href="index.html">HOME</a></li>
+                        <li><a href="sobre.html" class="active">SOBRE NÓS</a></li>
+                        <li><a href="engines.html">ENGINES</a></li>
+                        <li class="drop-hover">
+                            <a href="#">LINGUAGENS <i class="bi bi-caret-down-fill"></i></a>
+                            <div class="drop">
+                                <a href="html.html">HTML</a>
+                                <a href="css.html">CSS</a>
+                                <a href="javascript.html">JAVASCRIPT</a>
+                                <a href="python.html">PYTHON</a>
+                                <a href="java.html">JAVA</a>
+                                <a href="brainfuck.html">BRAINFUCK</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </header>
+
+    <main class="interface">
+        <h1>Sobre o Projeto e Nossa Equipe</h1>
+        <p>Bem-vindo à página "Linguagens e Engines", um projeto dedicado a explorar e compartilhar conhecimento sobre as diversas linguagens de programação e engines de desenvolvimento que moldam o mundo da tecnologia. Nosso objetivo é fornecer informações claras, concisas e acessíveis para entusiastas, estudantes e profissionais.</p>
+        <p>Acreditamos que o conhecimento é a chave para a inovação. Por isso, compilamos dados essenciais sobre cada ferramenta, suas aplicações e características, para que você possa entender melhor o vasto universo da programação e escolher o caminho ideal para seus estudos ou projetos.</p>
+
+        <hr> <h2>Nossa Missão</h2>
+        <p>Nossa missão é **democratizar o acesso à informação de qualidade** sobre linguagens de programação e engines, tornando o aprendizado mais fácil e inspirador para todos que desejam mergulhar neste universo.</p>
+
+        <hr> <h2>A Equipe por Trás do Projeto</h2>
+        <p>Este site foi idealizado e desenvolvido por um grupo de estudantes apaixonados por tecnologia do **IFSC - Instituto Federal de Santa Catarina, Campus Chapecó**, como parte de um projeto acadêmico. Enfrentamos o desafio de compilar e apresentar informações complexas de forma didática, e o resultado é fruto de muito trabalho e dedicação.</p>
+
+        <section class="member-cards-container">
+            <div class="member-card">
+                <img src="imagens/daviddrip.jpg" alt="Foto de David Jr." class="member-photo" />
+                <div class="member-name">David Jr.</div>
+                <div class="member-desc"><b>Back-End e Front-End. Moreno Do Mod. III</b></div>
+                <audio controls src="sounds/Sherk como se isso fosse acontecer [goPUe8wWZcs].mp3"></audio>
+                <a href="https://www.instagram.com/_davidj_s/" target="_blank" class="instagram-btn">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+
+            <div class="member-card">
+                <img src="imagens/enzo.png" alt="Foto de Enzo Brancher" class="member-photo" />
+                <div class="member-name">Enzo Brancher</div> 
+                <div class="member-desc"><b>Front-End e Back-End. Burguês da RTX 3080 Ti</b></div>
+                <audio controls src="audio/enzo-audio.mp3"></audio>
+                <a href="https://www.instagram.com/enzobrancher_/" target="_blank" class="instagram-btn">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+
+            <div class="member-card">
+                <img src="imagens/pedro.png" alt="Foto de Pedro Franz" class="member-photo" />
+                <div class="member-name">Pedro Franz</div>
+                <div class="member-desc"><b>Front-End e Pedro</b></div>
+                <audio controls src="audio/pedro-audio.mp3"></audio>
+                <a href="https://www.instagram.com/pedregulho35/" target="_blank" class="instagram-btn">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+
+            <div class="member-card">
+                <img src="imagens/davistobe.jpg" alt="Foto de Davi Stobe" class="member-photo" />
+                <div class="member-name">Davi Stobe</div>
+                <div class="member-desc"><b>Análise de dados e tecnologias de jogos</b></div>
+                <audio controls src="audio/davi-audio.mp3"></audio>
+                <a href="https://www.instagram.com/kylexsn/" target="_blank" class="instagram-btn">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+
+            <div class="member-card">
+                <img src="imagens/membro5.jpg" alt="Foto de Matheus Furlan" class="member-photo" />
+                <div class="member-name">Matheus Furlan</div>
+                <div class="member-desc">Membro dedicado à <b>pesquisa de conteúdo e redação</b>, garantindo a qualidade das informações.</div>
+                <audio controls src="audio/matheus-audio.mp3"></audio>
+                <a href="https://instagram.com/usuario5" target="_blank" class="instagram-btn">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+
+            <div class="member-card">
+                <img src="imagens/membro6.jpg" alt="Foto de Fabiane Moraes" class="member-photo" />
+                <div class="member-name">Fabiane Moraes</div>
+                <div class="member-desc">Responsável pela <b>revisão e otimização do conteúdo</b>, assegurando a clareza e precisão do material.</div>
+                <audio controls src="audio/fabiane-audio.mp3"></audio>
+                <a href="https://instagram.com/usuario6" target="_blank" class="instagram-btn">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+        </section> </main>
+    <footer>
+        <h4>©2025 By DavidjGreens & Enzo Brancher</h4>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/0b6d1a1fba.js" crossorigin="anonymous"></script>
+    <script src="script.js?v=2025060902"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>

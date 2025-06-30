@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS – Estilizando a Web</title>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="icon" href="imagens/css icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+</head>
+<body>
+      <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div> 
+  <header>
+    <div class="settings-container">
+      <button class="settings-button" aria-label="Abrir menu de configurações">
+        <i class="bi bi-gear-fill"></i>
+      </button>
+      <div class="settings-menu">
+        <button id="theme-toggle">Tema Escuro</button>
+      </div>
+    </div>
+
+    <section class="top-header">
+      <div class="interface">
+        <div class="logotipo">
+          <a href="index.html">
+            <img src="imagens/IFSC_horizontal_marca2015_PNG (1) - Editado.png" alt="Logotipo do site">
+          </a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/mod3tds/"><button><i class="bi bi-instagram"></i></button></a>
+          <a href="#"><button><i class="bi bi-whatsapp"></i></button></a>
+          <a href="https://www.facebook.com/ifscchapeco/?locale=pt_BR"><button><i class="bi bi-facebook"></i></button></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-header">
+      <div class="interface">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE NÓS</a></li>
+            <li><a href="engines.html">ENGINES</a></li>
+            <li class="drop-hover">
+              <a href="#">LINGUAGENS <i class="bi bi-caret-down-fill"></i></a>
+              <div class="drop">
+                <a href="html.html">HTML</a>
+                <a href="css.html" class="active">CSS</a>
+                <a href="javascript.html">JAVASCRIPT</a>
+                <a href="python.html">PYTHON</a>
+                <a href="java.html">JAVA</a>
+                <a href="brainfuck.html">BRAINFUCK</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <main class="interface">
+    <section class="language-info">
+      <img src="imagens/css.png" alt="Logo CSS" class="language-logo" >
+      <h1>CSS: A Linguagem de Estilização da Web</h1>
+      <p>O <b>CSS</b> (Cascading Style Sheets, ou Folhas de Estilo em Cascata) é a linguagem essencial para definir a apresentação visual de documentos escritos em linguagens de marcação, como o HTML. Enquanto o HTML estrutura o conteúdo de uma página web (como o "esqueleto"), o CSS atua como o "design de interiores", controlando as cores, fontes, layouts, espaçamentos e a forma como os elementos aparecem na tela.</p>
+      <p>A principal função do CSS é separar a preocupação com a <b>estrutura</b> (HTML) da <b>apresentação</b> (CSS), tornando o desenvolvimento e a manutenção de sites muito mais eficientes e organizados.</p>
+
+      <h2>Como o CSS Funciona?</h2>
+      <p>O CSS opera através de regras de estilo, que consistem em duas partes principais:</p>
+      <ul>
+          <li><b>Seletores:</b> Apontam para quais elementos HTML a regra de estilo deve ser aplicada. Podem ser nomes de tags (ex: <code>p</code>), classes (ex: <code>.minha-classe</code>), IDs (ex: <code>#meu-id</code>), ou combinações complexas.</li>
+          <li><b>Declarações:</b> Define as propriedades de estilo a serem aplicadas. Cada declaração é um par de <b>propriedade: valor;</b>. Por exemplo, <code>color: blue;</code> ou <code>font-size: 16px;</code>.</li>
+      </ul>
+      <p>O termo "Cascading" (Cascata) refere-se à forma como as regras de estilo são aplicadas e como conflitos são resolvidos, com base na ordem, origem e especificidade das regras.</p>
+
+      <h2>Métodos de Inclusão de CSS</h2>
+      <p>Existem três formas principais de aplicar CSS a um documento HTML:</p>
+      <ol>
+          <li><b>CSS Externo (Linked):</b> É o método mais recomendado e comum. As regras de estilo são escritas em um arquivo <code>.css</code> separado (como o seu <code>index.css</code>) e linkadas ao HTML usando a tag <code>&lt;link&gt;</code> no <code>&lt;head&gt;</code>. Isso permite reutilizar o mesmo estilo em várias páginas.
+              <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+          </li>
+          <li><b>CSS Interno (Embedded):</b> As regras de estilo são escritas dentro de uma tag <code>&lt;style&gt;</code>, localizada na seção <code>&lt;head&gt;</code> do documento HTML. É útil para estilos específicos de uma única página.
+              <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        h1 {
+            color: green;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+          </li>
+          <li><b>CSS Inline:</b> Os estilos são aplicados diretamente a um elemento HTML usando o atributo <code>style</code>. É o método menos recomendado para estilização em larga escala, pois mistura conteúdo e apresentação.
+              <pre><code>&lt;p style="color: red; font-size: 18px;"&gt;Este texto está estilizado inline.&lt;/p&gt;</code></pre>
+          </li>
+      </ol>
+
+      <h2>Principais Propriedades CSS</h2>
+      <p>O CSS oferece uma vasta gama de propriedades para controlar todos os aspectos visuais de uma página:</p>
+      <ul>
+          <li><b>Cores e Fundos:</b> <code>color</code> (cor do texto), <code>background-color</code> (cor de fundo), <code>background-image</code>.</li>
+          <li><b>Fontes e Textos:</b> <code>font-family</code> (tipo de fonte), <code>font-size</code> (tamanho da fonte), <code>font-weight</code> (negrito), <code>text-align</code> (alinhamento do texto), <code>line-height</code> (altura da linha).</li>
+          <li><b>Modelo de Caixa (Box Model):</b> Propriedades que controlam o espaço e o tamanho dos elementos: <code>width</code>, <code>height</code>, <code>padding</code> (espaçamento interno), <code>border</code> (borda), <code>margin</code> (espaçamento externo).</li>
+          <li><b>Layout:</b> <code>display</code> (controla o comportamento do elemento, ex: <code>block</code>, <code>inline</code>, <code>flex</code>, <code>grid</code>), <code>position</code>, <code>float</code>.</li>
+          <li><b>Responsividade:</b> <code>@media</code> queries permitem aplicar estilos diferentes com base nas características do dispositivo (tamanho da tela, orientação, etc.).</li>
+          <li><b>Animações e Transições:</b> <code>transition</code> e <code>animation</code> para criar efeitos visuais dinâmicos.</li>
+      </ul>
+
+      <h2>Exemplo Básico de uma Regra CSS</h2>
+      <pre><code>/* Estilo para o corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para um container genérico */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilo para títulos principais */
+h1 {
+    color: #336699;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Estilo para botões */
+button {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</code></pre>
+
+      <h2>Vantagens e Desvantagens do CSS</h2>
+      <ul>
+          <li><b>Vantagens:</b>
+              <ul>
+                  <li><b>Separação de Preocupações:</b> Mantém o conteúdo HTML limpo e focado na estrutura.</li>
+                  <li><b>Reutilização:</b> O mesmo arquivo CSS pode estilizar centenas de páginas, garantindo consistência.</li>
+                  <li><b>Manutenção Simplificada:</b> Alterar um estilo (ex: mudar a cor de todos os botões) é feito em um único lugar.</li>
+                  <li><b>Design Responsivo:</b> Essencial para adaptar sites a diferentes tamanhos de tela (desktop, tablet, mobile).</li>
+                  <li><b>Melhora da Acessibilidade:</b> Permite ajustar a apresentação para diferentes necessidades dos usuários.</li>
+              </ul>
+          </li>
+          <li><b>Desvantagens:</b>
+              <ul>
+                  <li><b>Curva de Aprendizado:</b> A cascata e a especificidade podem ser confusas para iniciantes.</li>
+                  <li><b>Conflitos de Estilo:</b> Em projetos grandes, pode haver conflitos se as regras não forem bem organizadas.</li>
+                  <li><b>Compatibilidade com Navegadores:</b> Nem todas as propriedades CSS se comportam exatamente igual em todos os navegadores antigos.</li>
+              </ul>
+          </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <h4>©2025 By DavidjGreens & Enzo Brancher</h4>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/0b6d1a1fba.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>

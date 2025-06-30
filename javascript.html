@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript – A Linguagem da Web Interativa</title> <link rel="stylesheet" href="index.css"/>
+  <link rel="icon" href="imagens/javascritpt icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+</head>
+<body>
+      <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div> 
+  <header>
+    <div class="settings-container">
+      <button class="settings-button" aria-label="Abrir menu de configurações">
+        <i class="bi bi-gear-fill"></i>
+      </button>
+      <div class="settings-menu">
+        <button id="theme-toggle">Tema Escuro</button>
+      </div>
+    </div>
+
+    <section class="top-header">
+      <div class="interface">
+        <div class="logotipo">
+          <a href="index.html">
+            <img src="imagens/IFSC_horizontal_marca2015_PNG (1) - Editado.png" alt="Logotipo do site">
+          </a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/mod3tds/"><button><i class="bi bi-instagram"></i></button></a>
+          <a href="#"><button><i class="bi bi-whatsapp"></i></button></a>
+          <a href="https://www.facebook.com/ifscchapeco/?locale=pt_BR"><button><i class="bi bi-facebook"></i></button></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-header">
+      <div class="interface">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE NÓS</a></li>
+            <li><a href="engines.html">ENGINES</a></li>
+            <li class="drop-hover">
+              <a href="#">LINGUAGENS <i class="bi bi-caret-down-fill"></i></a>
+              <div class="drop">
+                <a href="html.html">HTML</a>
+                <a href="css.html">CSS</a>
+                <a href="javascript.html" class="active">JAVASCRIPT</a>
+                <a href="python.html">PYTHON</a>
+                <a href="java.html">JAVA</a>
+                <a href="brainfuck.html">BRAINFUCK</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <main class="interface" style="padding: 40px 4%;">
+    <section class="language-info">
+      <img src="imagens/js.png" alt="Logo JavaScript" class="language-logo" >
+      <h1>JavaScript: A Linguagem da Web Interativa</h1>
+      <p>O <b>JavaScript (JS)</b> é uma linguagem de programação de alto nível, interpretada e multiparadigma, fundamental para tornar a World Wide Web interativa. Criada inicialmente para adicionar dinamismo e funcionalidade aos navegadores, o JS evoluiu para se tornar uma das linguagens mais versáteis do mundo, capaz de rodar em diversas plataformas.</p>
+      <p>Junto com o HTML (estrutura) e o CSS (estilo), o JavaScript forma a "tríade" do desenvolvimento web, permitindo criar experiências ricas e dinâmicas para os usuários.</p>
+
+      <h2>Como o JavaScript Funciona no Navegador</h2>
+      <p>Quando você visita uma página web, o código JavaScript é interpretado e executado por um "motor JavaScript" embutido no seu navegador (como o V8 do Google Chrome ou o SpiderMonkey do Mozilla Firefox). O JS interage com os elementos da página através do <b>DOM (Document Object Model)</b>, que é uma representação em árvore da estrutura do HTML e CSS. Essa interação permite que o JavaScript:</p>
+      <ul>
+          <li>Modifique o conteúdo de textos, imagens e outros elementos.</li>
+          <li>Altere os estilos CSS, mudando cores, tamanhos e layouts.</li>
+          <li>Responda a eventos do usuário, como cliques de botão, digitação em formulários ou movimentos do mouse.</li>
+          <li>Valide dados inseridos em formulários antes do envio ao servidor.</li>
+          <li>Comunique-se com servidores para carregar ou enviar dados de forma assíncrona (AJAX e Fetch API), sem recarregar a página.</li>
+      </ul>
+
+      <h2>Principais Áreas de Aplicação do JavaScript</h2>
+      <p>A ubiquidade e a flexibilidade do JavaScript o tornaram indispensável em diversas áreas da tecnologia:</p>
+      <ul>
+          <li><b>Desenvolvimento Front-end Web:</b> É a linguagem padrão para criar a interface do usuário em navegadores, adicionando interatividade, animações e dinamismo. Frameworks populares como <b>React, Angular e Vue.js</b> permitem construir Single Page Applications (SPAs) complexas e eficientes.</li>
+          <li><b>Desenvolvimento Back-end (Node.js):</b> Com o ambiente de execução <b>Node.js</b>, o JavaScript pode ser utilizado no lado do servidor para construir APIs RESTful, microsserviços, aplicações em tempo real (como chats) e outras lógicas de backend, permitindo o desenvolvimento "full-stack" com uma única linguagem.</li>
+          <li><b>Desenvolvimento Mobile:</b> Frameworks como <b>React Native</b> e <b>NativeScript</b> possibilitam a criação de aplicativos móveis nativos para iOS e Android usando JavaScript.</li>
+          <li><b>Desenvolvimento Desktop:</b> Plataformas como <b>Electron</b> permitem construir aplicações desktop multiplataforma usando tecnologias web (HTML, CSS, JS), como o Visual Studio Code, Slack e Discord.</li>
+          <li><b>Outras Aplicações:</b> O JavaScript também é usado em Internet das Coisas (IoT), Machine Learning (com bibliotecas específicas), e até mesmo em desenvolvimento de jogos web.</li>
+      </ul>
+
+      <h2>Exemplo de Código: Interatividade Simples no Navegador</h2>
+      <p>Este exemplo demonstra como o JavaScript pode mudar o texto de um parágrafo quando um botão é clicado:</p>
+      <div style="background-color: #f7f7f7; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+          <p id="mensagem" style="font-size: 1.1em; color: #333;">Olá, clique no botão para uma surpresa!</p>
+          <button onclick="mudarMensagem()" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Clique aqui</button>
+      </div>
+      <pre><code>&lt;!-- HTML --&gt;
+&lt;p id="mensagem"&gt;Olá, clique no botão para uma surpresa!&lt;/p&gt;
+&lt;button onclick="mudarMensagem()"&gt;Clique aqui&lt;/button&gt;
+
+&lt;!-- O JavaScript que faz o botão funcionar --&gt;
+&lt;script&gt;
+    function mudarMensagem() {
+        // Seleciona o elemento HTML com o ID "mensagem"
+        const paragrafo = document.getElementById("mensagem");
+        // Altera o conteúdo de texto do parágrafo
+        paragrafo.textContent = "Você clicou no botão e a mensagem mudou! :D";
+        paragrafo.style.color = "#28a745"; // Opcional: muda a cor do texto
+        paragrafo.style.fontWeight = "bold"; // Opcional: deixa em negrito
+    }
+&lt;/script&gt;
+</code></pre>
+      <p>Neste exemplo:</p>
+      <ul>
+          <li>O atributo <code>onclick</code> no botão chama a função <code>mudarMensagem()</code> quando o botão é pressionado.</li>
+          <li>A função <code>mudarMensagem()</code> usa <code>document.getElementById("mensagem")</code> para encontrar o parágrafo pelo seu ID.</li>
+          <li><code>.textContent</code> é usado para alterar o texto visível do parágrafo, demonstrando a capacidade do JavaScript de manipular o DOM.</li>
+      </ul>
+
+      <h2>Vantagens e Desvantagens do JavaScript</h2>
+      <ul>
+          <li><b>Vantagens:</b>
+              <ul>
+                  <li><b>Ubiquidade:</b> É a linguagem padrão para interatividade web front-end, rodando em todos os navegadores modernos.</li>
+                  <li><b>Versatilidade (Full-stack):</b> Com Node.js, pode ser usada para desenvolvimento de backend, mobile e desktop, permitindo um stack unificado.</li>
+                  <li><b>Ecossistema Vasto:</b> Uma quantidade enorme de frameworks, bibliotecas e ferramentas (React, Angular, Vue, Express, D3.js, etc.).</li>
+                  <li><b>Comunidade Ativa:</b> Grande suporte, constante inovação e muitos recursos de aprendizado.</li>
+                  <li><b>Assíncrono:</b> Facilita a criação de aplicações responsivas que não bloqueiam a interface do usuário durante operações demoradas.</li>
+              </ul>
+          </li>
+          <li><b>Desvantagens:</b>
+              <ul>
+                  <li><b>Segurança no Cliente:</b> Como o código roda no navegador, pode ser inspecionado e potencialmente manipulado por usuários mal-intencionados (requer validações também no servidor).</li>
+                  <li><b>Tipagem Dinâmica:</b> Embora flexível, pode levar a erros inesperados em projetos grandes se não houver um cuidado com a qualidade do código (mitigado por TypeScript, que adiciona tipagem).</li>
+                  <li><b>Variações de Ambiente:</b> O comportamento pode variar ligeiramente entre diferentes navegadores e versões (embora a padronização tenha melhorado muito).</li>
+              </ul>
+          </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <h4>©2025 By DavidjGreens & Enzo Brancher</h4>
+  </footer>
+
+  <script>
+    function mudarMensagem() {
+        // Seleciona o elemento HTML com o ID "mensagem"
+        const paragrafo = document.getElementById("mensagem");
+        // Altera o conteúdo de texto do parágrafo
+        paragrafo.textContent = "Você clicou no botão e a mensagem mudou! :D";
+        paragrafo.style.color = "#28a745"; // Opcional: muda a cor do texto
+        paragrafo.style.fontWeight = "bold"; // Opcional: deixa em negrito
+    }
+</script>
+  <script src="https://kit.fontawesome.com/0b6d1a1fba.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>

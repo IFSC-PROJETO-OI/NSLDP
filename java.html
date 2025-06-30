@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java – Linguagem Robusta e Multiplataforma</title>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="icon" href="imagens/java icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+</head>
+<body>
+      <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div> 
+  <header>
+    <div class="settings-container">
+      <button class="settings-button" aria-label="Abrir menu de configurações">
+        <i class="bi bi-gear-fill"></i>
+      </button>
+      <div class="settings-menu">
+        <button id="theme-toggle">Tema Escuro</button>
+      </div>
+    </div>
+
+    <section class="top-header">
+      <div class="interface">
+        <div class="logotipo">
+          <a href="index.html">
+            <img src="imagens/IFSC_horizontal_marca2015_PNG (1) - Editado.png" alt="Logotipo do site">
+          </a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/mod3tds/"><button><i class="bi bi-instagram"></i></button></a>
+          <a href="#"><button><i class="bi bi-whatsapp"></i></button></a>
+          <a href="https://www.facebook.com/ifscchapeco/?locale=pt_BR"><button><i class="bi bi-facebook"></i></button></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-header">
+      <div class="interface">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE NÓS</a></li>
+            <li><a href="engines.html">ENGINES</a></li>
+            <li class="drop-hover">
+              <a href="#">LINGUAGENS <i class="bi bi-caret-down-fill"></i></a>
+              <div class="drop">
+                <a href="html.html">HTML</a>
+                <a href="css.html">CSS</a>
+                <a href="javascript.html">JAVASCRIPT</a>
+                <a href="python.html">PYTHON</a>
+                <a href="java.html" class="active">JAVA</a>
+                <a href="brainfuck.html">BRAINFUCK</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <main class="interface">
+    <section class="language-info">
+      <img src="imagens/java.png" alt="Logo Java" class="language-logo" >
+      <h1>Java: A Linguagem Robusta e Multiplataforma</h1>
+      <p><b>Java</b> é uma das linguagens de programação mais populares e influentes do mundo, criada pela Sun Microsystems (agora Oracle) no início dos anos 90. Ela foi projetada com o lema <b>"Write Once, Run Anywhere" (WORA)</b>, o que significa que o código Java compilado pode ser executado em qualquer plataforma que possua uma Máquina Virtual Java (JVM), sem a necessidade de recompilação específica para cada sistema operacional.</p>
+      <p>Conhecida por sua <b>robustez, segurança e alto desempenho</b>, Java é uma linguagem orientada a objetos, o que facilita a criação de sistemas complexos e modulares. Seu vasto ecossistema de bibliotecas e frameworks contribui para sua ampla aplicação em diversas áreas da tecnologia.</p>
+
+      <h2>Principais Áreas de Aplicação do Java</h2>
+      <p>A versatilidade do Java permite que ele seja utilizado em uma infinidade de domínios:</p>
+      <ul>
+          <li><b>Desenvolvimento Android:</b> É a linguagem fundamental para a construção de aplicativos nativos para o sistema operacional Android.</li>
+          <li><b>Aplicações Corporativas e Empresariais:</b> Java é a espinha dorsal de muitos sistemas de grande escala em grandes empresas, com frameworks como Spring e Java EE.</li>
+          <li><b>Desenvolvimento Web (Backend):</b> Usado para criar a lógica de servidor (backend) de websites e APIs robustas, com frameworks como Spring Boot.</li>
+          <li><b>Aplicações Desktop:</b> Desenvolvimento de softwares para computadores pessoais usando bibliotecas como Swing e JavaFX.</li>
+          <li><b>Big Data:</b> Muitas ferramentas e tecnologias para processamento de grandes volumes de dados, como Apache Hadoop e Apache Spark, são implementadas em Java.</li>
+          <li><b>Internet das Coisas (IoT):</b> Presente em dispositivos embarcados e soluções de IoT devido à sua portabilidade.</li>
+      </ul>
+
+      <h2>Conceitos Fundamentais do Java</h2>
+      <p>Para entender o Java, é importante conhecer alguns de seus pilares:</p>
+      <ul>
+          <li><b>Orientação a Objetos (POO):</b> Java é quase puramente orientada a objetos. Isso significa que o código é organizado em torno de "objetos" que encapsulam dados e comportamentos, promovendo conceitos como classes, objetos, herança, polimorfismo, encapsulamento e abstração.</li>
+          <li><b>Máquina Virtual Java (JVM):</b> É o coração do Java. A JVM é um ambiente de tempo de execução que permite que o bytecode Java seja executado em qualquer dispositivo, independentemente do sistema operacional subjacente.</li>
+          <li><b>Java Runtime Environment (JRE):</b> Contém a JVM e as bibliotecas essenciais para rodar aplicações Java. É o que o usuário final precisa instalar.</li>
+          <li><b>Java Development Kit (JDK):</b> Um conjunto de ferramentas para desenvolvedores Java, incluindo o JRE, o compilador (javac), e outras ferramentas de depuração e empacotamento.</li>
+          <li><b>Coleta de Lixo (Garbage Collection):</b> Java gerencia automaticamente a memória. O coletor de lixo identifica e libera a memória que não está mais sendo usada, aliviando o desenvolvedor da tarefa manual de gerenciar ponteiros e desalocar memória.</li>
+      </ul>
+
+      <h2>Exemplo de Código: "Hello World" em Java</h2>
+      <p>Veja como é um programa simples que imprime "Hello, World!" no console:</p>
+      <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!"); // Imprime a mensagem no console
+    }
+}
+</code></pre>
+      <p>Neste código:</p>
+      <ul>
+          <li><code>public class HelloWorld</code>: Define uma classe pública chamada <code>HelloWorld</code>. Em Java, todo código reside dentro de classes.</li>
+          <li><code>public static void main(String[] args)</code>: É o método principal (ou ponto de entrada) de qualquer aplicação Java. Quando você executa um programa Java, a JVM procura e executa este método.</li>
+          <li><code>System.out.println("Hello, World!");</code>: Esta linha imprime a string "Hello, World!" no console.</li>
+      </ul>
+
+      <h2>Vantagens e Desvantagens do Java</h2>
+      <ul>
+          <li><b>Vantagens:</b>
+              <ul>
+                  <li><b>Multiplataforma:</b> Grande portabilidade de código.</li>
+                  <li><b>Orientação a Objetos:</b> Promove código modular e reutilizável.</li>
+                  <li><b>Robusto e Seguro:</b> Forte tipagem, exceções bem definidas e segurança embutida.</li>
+                  <li><b>Grande Ecossistema:</b> Ampla gama de APIs, bibliotecas e frameworks disponíveis.</li>
+                  <li><b>Comunidade e Suporte:</b> Vasta comunidade de desenvolvedores e muito material de aprendizado.</li>
+                  <li><b>Gerenciamento Automático de Memória:</b> A coleta de lixo simplifica o desenvolvimento.</li>
+              </ul>
+          </li>
+          <li><b>Desvantagens:</b>
+              <ul>
+                  <li><b>Verboso:</b> Para tarefas simples, pode exigir mais linhas de código do que linguagens mais concisas.</li>
+                  <li><b>Uso de Memória:</b> Aplicações Java podem consumir mais memória do que as desenvolvidas em linguagens de baixo nível.</li>
+                  <li><b>Curva de Aprendizado:</b> A riqueza de conceitos da POO e do ecossistema Java pode ser desafiadora para iniciantes.</li>
+              </ul>
+          </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <h4>©2025 By DavidjGreens & Enzo Brancher</h4>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/0b6d1a1fba.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>

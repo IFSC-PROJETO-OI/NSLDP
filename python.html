@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python – A Linguagem Versátil e Poderosa</title>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="icon" href="imagens/python icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+</head>
+<body>
+      <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div> 
+  <header>
+    <div class="settings-container">
+      <button class="settings-button" aria-label="Abrir menu de configurações">
+        <i class="bi bi-gear-fill"></i>
+      </button>
+      <div class="settings-menu">
+        <button id="theme-toggle">Tema Escuro</button>
+      </div>
+    </div>
+
+    <section class="top-header">
+      <div class="interface">
+        <div class="logotipo">
+          <a href="index.html">
+            <img src="imagens/IFSC_horizontal_marca2015_PNG (1) - Editado.png" alt="Logotipo do site">
+          </a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/mod3tds/"><button><i class="bi bi-instagram"></i></button></a>
+          <a href="#"><button><i class="bi bi-whatsapp"></i></button></a>
+          <a href="https://www.facebook.com/ifscchapeco/?locale=pt_BR"><button><i class="bi bi-facebook"></i></button></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-header">
+      <div class="interface">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE NÓS</a></li>
+            <li><a href="engines.html">ENGINES</a></li>
+            <li class="drop-hover">
+              <a href="#">LINGUAGENS <i class="bi bi-caret-down-fill"></i></a>
+              <div class="drop">
+                <a href="html.html">HTML</a>
+                <a href="css.html">CSS</a>
+                <a href="javascript.html">JAVASCRIPT</a>
+                <a href="python.html" class="active">PYTHON</a>
+                <a href="java.html">JAVA</a>
+                <a href="brainfuck.html">BRAINFUCK</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <main class="interface">
+    <section class="language-info">
+      <img src="imagens/pythoned.png" alt="Logo Python" class="language-logo" >
+        <h1>Python: A Linguagem Versátil e Poderosa</h1>
+        <p><b>Python</b> é uma linguagem de programação de alto nível, interpretada e de propósito geral, criada por Guido van Rossum e lançada em 1991. Ela se destaca por sua <b>sintaxe clara, legibilidade e simplicidade</b>, que a tornam uma das linguagens mais fáceis de aprender e mais produtivas para desenvolvedores de todos os níveis.</p>
+        <p>A filosofia do Python enfatiza a legibilidade do código com o uso de indentação para delimitar blocos, o que a torna quase um pseudocódigo executável. Além disso, ela suporta múltiplos paradigmas de programação, incluindo **orientado a objetos, imperativo e funcional**, adaptando-se a diversas abordagens de desenvolvimento.</p>
+
+        <h2>Principais Áreas de Aplicação do Python</h2>
+        <p>A versatilidade do Python é uma de suas maiores forças, permitindo seu uso em uma vasta gama de domínios:</p>
+        <ul> 
+          <li><b>Desenvolvimento Web (Backend):</b> Com frameworks poderosos como <b>Django</b> (para aplicações robustas e escaláveis) e <b>Flask</b> (para APIs e microsserviços leves), Python é uma escolha popular para construir a lógica de servidor de websites e aplicações web.</li>
+          <li><b>Ciência de Dados e Análise Estatística:</b> É a linguagem padrão para **Ciência de Dados**, impulsionada por bibliotecas como <b>Pandas</b> (manipulação de dados), <b>NumPy</b> (computação numérica) e <b>SciPy</b> (cálculo científico).</li>
+          <li><b>Inteligência Artificial (IA) e Machine Learning (ML):</b> Python domina o cenário de **IA e ML** graças a frameworks como <b>TensorFlow, Keras e PyTorch</b>, sendo a linguagem preferida para o desenvolvimento e pesquisa de modelos de aprendizado de máquina.</li>
+          <li><b>Automação e Scripting:</b> Sua simplicidade e vasta biblioteca padrão a tornam ideal para <b>automação de tarefas repetitivas, scripts de sistema, web scraping</b> e automação de testes.</li>
+          <li><b>Desenvolvimento de Software:</b> Utilizado para criar aplicações desktop (com bibliotecas como PyQt ou Kivy), ferramentas de linha de comando e diversas soluções de backend.</li>
+          <li><b>DevOps e Infraestrutura:</b> É amplamente usado para gerenciamento de infraestrutura, automação de processos e ferramentas em ambientes de DevOps.</li>
+        </ul>
+
+        <h2>Características Chave do Python</h2>
+        <ul>
+            <li><b>Sintaxe Simples e Legível:</b> Reduz a curva de aprendizado e melhora a manutenção do código.</li>
+            <li><b>Multiplataforma:</b> Compatível com Windows, macOS, Linux, e outros sistemas, garantindo portabilidade.</li>
+            <li><b>Linguagem Interpretada:</b> Facilita o desenvolvimento e a depuração, pois o código é executado linha por linha.</li>
+            <li><b>Tipagem Dinâmica e Forte:</b> Flexível quanto à declaração de tipos de variáveis, com verificações robustas em tempo de execução.</li>
+            <li><b>Vasta Biblioteca Padrão:</b> Oferece módulos para quase todas as necessidades, do tratamento de arquivos a comunicação de rede.</li>
+            <li><b>Grande Comunidade:</b> Uma comunidade global ativa que contribui com recursos, tutoriais e suporte.</li>
+        </ul>
+
+        <h2>Exemplo de Código: "Hello World" e Funções Simples em Python</h2>
+        <p>A simplicidade do Python permite que você escreva código funcional com poucas linhas:</p>
+        <pre><code># Exemplo 1: O clássico "Hello World!"
+print("Hello, World!")
+
+# Exemplo 2: Uma função simples para cumprimentar
+def saudacao(nome):
+    return f"Olá, {nome}! Bem-vindo ao mundo Python."
+
+# Chamando a função e imprimindo o resultado
+nome_usuario = "Visitante"
+mensagem_personalizada = saudacao(nome_usuario)
+print(mensagem_personalizada)
+
+# Exemplo 3: Soma de dois números
+num1 = 10
+num2 = 25
+soma = num1 + num2
+print(f"A soma de {num1} e {num2} é: {soma}")
+</code></pre>
+
+        <h2>Vantagens e Desvantagens do Python</h2>
+        <ul>
+            <li><b>Vantagens:</b>
+                <ul>
+                    <li><b>Facilidade de Aprendizado:</b> Ideal para iniciantes em programação.</li>
+                    <li><b>Versatilidade Incomparável:</b> Usado em quase todas as áreas da tecnologia moderna.</li>
+                    <li><b>Produtividade Elevada:</b> Permite desenvolver e implantar soluções rapidamente.</li>
+                    <li><b>Ecossistema Rico:</b> Milhares de bibliotecas e frameworks disponíveis para qualquer necessidade.</li>
+                    <li><b>Comunidade Enorme e Ativa:</b> Facilita a resolução de problemas e o aprendizado contínuo.</li>
+                    <li><b>Código Altamente Legível:</b> Facilita a colaboração e a manutenção de projetos a longo prazo.</li>
+                </ul>
+            </li>
+            <li><b>Desvantagens:</b>
+                <ul>
+                    <li><b>Performance:</b> Por ser uma linguagem interpretada, pode ser mais lenta que linguagens compiladas (como C++ ou Java) para tarefas que exigem alto poder computacional, embora muitas bibliotecas críticas sejam otimizadas em C/C++.</li>
+                    <li><b>Consumo de Memória:</b> Em certas aplicações, o Python pode consumir mais memória.</li>
+                    <li><b>Restrições em Mobile Nativo:</b> Não é a primeira escolha para o desenvolvimento de aplicativos mobile nativos puros, embora existam alternativas para isso.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+  </main>
+  <footer>
+    <h4>©2025 By DavidjGreens & Enzo Brancher</h4>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/0b6d1a1fba.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>

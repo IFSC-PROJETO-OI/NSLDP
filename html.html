@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML – Linguagens</title>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="icon" href="imagens/html icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+</head>
+<body>
+      <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div> 
+  <header>
+    <div class="settings-container">
+      <button class="settings-button" aria-label="Abrir menu de configurações">
+        <i class="bi bi-gear-fill"></i>
+      </button>
+      <div class="settings-menu">
+        <button id="theme-toggle">Tema Escuro</button>
+      </div>
+    </div>
+
+    <section class="top-header">
+      <div class="interface">
+        <div class="logotipo">
+          <a href="index.html">
+            <img src="imagens/IFSC_horizontal_marca2015_PNG (1) - Editado.png" alt="Logotipo do site">
+          </a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/mod3tds/"><button><i class="bi bi-instagram"></i></button></a>
+          <a href="#"><button><i class="bi bi-whatsapp"></i></button></a>
+          <a href="https://www.facebook.com/ifscchapeco/?locale=pt_BR"><button><i class="bi bi-facebook"></i></button></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-header">
+      <div class="interface">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE NÓS</a></li>
+            <li><a href="engines.html">ENGINES</a></li>
+            <li class="drop-hover">
+              <a href="#">LINGUAGENS <i class="bi bi-caret-down-fill"></i></a>
+              <div class="drop">
+                <a href="html.html" class="active">HTML</a>
+                <a href="css.html">CSS</a>
+                <a href="javascript.html">JAVASCRIPT</a>
+                <a href="python.html">PYTHON</a>
+                <a href="java.html">JAVA</a>
+                <a href="brainfuck.html">BRAINFUCK</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <main class="interface">
+    <section class="language-info">
+      <img src="imagens/html.png" alt="Logo HTML" class="language-logo" >
+      <h1>O que é HTML?</h1>
+      <p>O <b>HTML</b>, que significa <b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage (Linguagem de Marcação de Hipertexto), é a espinha dorsal de toda página da web. Não é uma linguagem de programação, mas sim uma linguagem de marcação que define a estrutura e o conteúdo de um site.</p>
+      <p>Ele usa uma série de <b>elementos</b> (representados por <b>tags</b>) que informam ao navegador como exibir o conteúdo – se é um parágrafo, uma lista, uma imagem, um link, etc.</p>
+
+      <h2>Estrutura Básica de um Documento HTML</h2>
+      <p>Todo documento HTML segue uma estrutura fundamental:</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="index.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Conteúdo da sua página vai aqui --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <ul>
+          <li><code>&lt;!DOCTYPE html&gt;</code>: Declara o tipo de documento, garantindo que o navegador renderize a página corretamente.</li>
+          <li><code>&lt;html&gt;</code>: O elemento raiz de toda a página HTML.</li>
+          <li><code>&lt;head&gt;</code>: Contém metadados sobre a página (título, links para CSS, configurações de caracteres).</li>
+          <li><code>&lt;body&gt;</code>: Contém todo o conteúdo visível da página.</li>
+      </ul>
+
+      <h2>Principais Tags e Sua Utilidade</h2>
+      <p>O HTML possui diversas tags para estruturar diferentes tipos de conteúdo:</p>
+      <ul>
+          <li><b>Títulos:</b> <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> para diferentes níveis de importância de títulos.</li>
+          <li><b>Parágrafos:</b> <code>&lt;p&gt;</code> para blocos de texto.</li>
+          <li><b>Links:</b> <code>&lt;a href="url"&gt;</code> para criar hiperlinks.</li>
+          <li><b>Imagens:</b> <code>&lt;img src="caminho.jpg" alt="descrição"&gt;</code> para incorporar imagens.</li>
+          <li><b>Listas:</b> <code>&lt;ul&gt;</code> (não ordenada) e <code>&lt;ol&gt;</code> (ordenada) com itens <code>&lt;li&gt;</code>.</li>
+          <li><b>Divisões:</b> <code>&lt;div&gt;</code> e <code>&lt;span&gt;</code> para agrupar e estilizar conteúdos.</li>
+      </ul>
+
+      <h2>Exemplo Básico</h2>
+      <p>Veja um exemplo simples de como o HTML estrutura o conteúdo:</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Meu Primeiro HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao Mundo do HTML!&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo de exemplo sobre como o HTML funciona.&lt;/p&gt;
+    &lt;a href="https://www.w3schools.com/html/" target="_blank"&gt;Aprenda mais sobre HTML&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h2>Vantagens e Desvantagens</h2>
+      <ul>
+          <li><b>Vantagens:</b>
+              <ul>
+                  <li>Essencial para a construção de qualquer página web.</li>
+                  <li>Fácil de aprender e entender os conceitos básicos.</li>
+                  <li>Amplamente documentado e suportado por todos os navegadores.</li>
+              </ul>
+          </li>
+          <li><b>Desvantagens:</b>
+              <ul>
+                  <li>Não possui lógica de programação (precisa de JavaScript para interatividade).</li>
+                  <li>Requer CSS para estilização e apresentação visual.</li>
+                  <li>Pode se tornar complexo para páginas muito grandes e mal estruturadas.</li>
+              </ul>
+          </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <h4>©2025 By DavidjGreens & Enzo Brancher</h4>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/0b6d1a1fba.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>

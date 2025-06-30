@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brainfuck – Linguagens Esotéricas</title>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="icon" href="imagens/brainfuck icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+</head>
+<body>
+      <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div> 
+  <header>
+    <div class="settings-container">
+      <button class="settings-button" aria-label="Abrir menu de configurações">
+        <i class="bi bi-gear-fill"></i>
+      </button>
+      <div class="settings-menu">
+        <button id="theme-toggle">Tema Escuro</button>
+      </div>
+    </div>
+
+    <section class="top-header">
+      <div class="interface">
+        <div class="logotipo">
+          <a href="index.html">
+            <img src="imagens/IFSC_horizontal_marca2015_PNG (1) - Editado.png" alt="Logotipo do site">
+          </a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/mod3tds/"><button><i class="bi bi-instagram"></i></button></a>
+          <a href="#"><button><i class="bi bi-whatsapp"></i></button></a>
+          <a href="https://www.facebook.com/ifscchapeco/?locale=pt_BR"><button><i class="bi bi-facebook"></i></button></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-header">
+      <div class="interface">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE NÓS</a></li>
+            <li><a href="engines.html">ENGINES</a></li>
+            <li class="drop-hover">
+              <a href="#">LINGUAGENS <i class="bi bi-caret-down-fill"></i></a>
+              <div class="drop">
+                <a href="html.html">HTML</a>
+                <a href="css.html">CSS</a>
+                <a href="javascript.html">JAVASCRIPT</a>
+                <a href="python.html">PYTHON</a>
+                <a href="java.html">JAVA</a>
+                <a href="brainfuck.html" class="active">BRAINFUCK</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <main class="interface">
+    <section class="language-info">
+      <img src="imagens/brainfuck.png" alt="Logo Brainfuck - Um conjunto de símbolos" class="language-logo" >
+      <h1>Brainfuck: A Linguagem Esotérica Minimalista</h1>
+      <p><b>Brainfuck</b> é uma linguagem de programação esotérica, criada por Urban Müller em 1993, com um único e peculiar objetivo: ter o menor compilador possível, idealmente com apenas 240 bytes. Ela não foi desenvolvida para ser útil na prática, mas sim como um desafio intelectual para programadores e uma forma de explorar os limites do design de linguagens.</p>
+      <p>Seu nome, que pode ser traduzido como "sacudir o cérebro", reflete a complexidade e a dificuldade de ler e escrever código nessa linguagem, tornando-a uma verdadeira "tortura" mental divertida para alguns.</p>
+
+      <h2>Os 8 Comandos de Brainfuck</h2>
+      <p>Apesar de sua complexidade aparente, Brainfuck possui apenas 8 comandos. Qualquer outro caractere presente no código é ignorado e pode ser usado para adicionar comentários.</p>
+      <ul>
+          <li><b><code>&gt;</code> (maior que):</b> Incrementa o ponteiro. Move o ponteiro para a célula de memória seguinte.</li>
+          <li><b><code>&lt;</code> (menor que):</b> Decrementa o ponteiro. Move o ponteiro para a célula de memória anterior.</li>
+          <li><b><code>+</code> (mais):</b> Incrementa o valor. Adiciona 1 ao valor da célula de memória apontada.</li>
+          <li><b><code>-</code> (menos):</b> Decrementa o valor. Subtrai 1 do valor da célula de memória apontada.</li>
+          <li><b><code>.</code> (ponto):</b> Saída. Imprime o caractere cujo valor ASCII está na célula de memória apontada.</li>
+          <li><b><code>,</code> (vírgula):</b> Entrada. Lê um caractere da entrada e armazena seu valor ASCII na célula de memória apontada.</li>
+          <li><b><code>[</code> (colchete esquerdo):</b> Início de loop. Se o valor na célula apontada for zero, o ponteiro de execução pula para o comando após o <code>]</code> correspondente.</li>
+          <li><b><code>]</code> (colchete direito):</b> Fim de loop. Se o valor na célula apontada não for zero, o ponteiro de execução volta para o comando após o <code>[</code> correspondente.</li>
+      </ul>
+
+      <h2>Como Funciona?</h2>
+      <p>Brainfuck opera em um modelo de máquina simples: uma fita de memória (um array de células, geralmente bytes, inicializadas com zero) e um ponteiro que aponta para uma célula específica nessa fita. Os 8 comandos manipulam o ponteiro, o valor na célula apontada, ou realizam operações de entrada/saída.</p>
+
+      <h2>Exemplo: "Hello World" em Brainfuck</h2>
+      <p>Para ilustrar a complexidade de Brainfuck, veja como seria o código para imprimir a clássica frase "Hello World!":</p>
+      <pre><code>++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.&lt;.+++.------.--------.>>+.>++.</code></pre>
+      <p>Cada caractere na frase "Hello World!" é construído a partir de uma série de incrementos e decrementos na célula de memória e, em seguida, impresso. Loops são usados para repetir essas operações de forma eficiente, mas o resultado é um código denso e difícil de decifrar sem uma análise cuidadosa.</p>
+
+      <h2>Vantagens e Desvantagens (O Verdadeiro Propósito)</h2>
+      <ul>
+          <li><b>Vantagens:</b>
+              <ul>
+                  <li>Extremamente minimalista, ideal para estudos de linguagens e teoria da computação (Turing Completude).</li>
+                  <li>Um excelente desafio mental para programadores.</li>
+              </ul>
+          </li>
+          <li><b>Desvantagens:</b>
+              <ul>
+                  <li>Completamente impraticável para qualquer uso real no desenvolvimento de software.</li>
+                  <li>Código extremamente difícil de ler, escrever e, especialmente, depurar.</li>
+                  <li>Muito verboso para tarefas simples.</li>
+              </ul>
+          </li>
+      </ul>
+      <p>O propósito de Brainfuck não é ser uma ferramenta de desenvolvimento, mas sim uma experiência de aprendizado e uma curiosidade no vasto universo das linguagens de programação.</p>
+    </section>
+  </main>
+  <footer>
+    <h4>©2025 By DavidjGreens & Enzo Brancher</h4>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/0b6d1a1fba.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>

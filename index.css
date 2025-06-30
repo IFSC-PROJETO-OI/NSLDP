@@ -1,0 +1,981 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700;1,400..700&family=Oswald:wght@200..700;1,400..700&family=VT323&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif; /* Oswald para títulos e menus */
+}
+
+/* --- Estilos Gerais para o Conteúdo das Páginas - TEMA CLARO PADRÃO --- */
+body {
+    background-color: #f8f8f8; /* Fundo muito claro para o tema padrão (claro) */
+    color: #333; /* Cor de texto padrão para o tema claro */
+    font-family: "Cabin", sans-serif; /* Usando a fonte Cabin para o texto principal */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor leitura */
+    overflow-x: hidden; /* Previne rolagem horizontal indesejada */
+}
+
+/* Modo escuro para o corpo */
+body.dark-mode {
+    background-color: #222; /* Fundo escuro para o tema escuro */
+    color: #eee; /* Cor de texto clara para o tema escuro */
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    background-color: #424147; /* Header sempre escuro */
+    position: relative; /* ADICIONADO: Para que .settings-container se posicione em relação ao header */
+}
+
+/* --- Estilos para o FOOTER --- */
+footer {
+    background-color: #49b146; /* Cor de fundo do footer no tema CLARO */
+    font-family: "Cabin", sans-serif; /* Preferência por Cabin para textos */
+    font-size: 0.9em; /* Tamanho da fonte ajustado */
+    padding: 20px;
+    text-align: center;
+    color: #424147; /* Cor do texto no footer para o tema CLARO */
+}
+/* Estilo do footer para modo escuro */
+body.dark-mode footer {
+    background-color: #388e3c; /* Um verde um pouco mais escuro para o modo escuro */
+    color: #eee; /* Cor de texto clara para o footer no modo escuro */
+}
+
+
+.top-header {
+    padding: 20px 4%;
+}
+
+.top-header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-header .logotipo img {
+    max-width: 200px;
+}
+
+.top-header .social-links button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #424147; /* Borda escura no tema CLARO */
+    cursor: pointer;
+    color: white; /* Ícone branco no tema CLARO */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-header .social-links button:hover {
+    background-color: #49b146;
+    border-color: #49b146;
+    color: #424147; /* Texto escuro no hover do tema CLARO */
+}
+
+/* Estilos para o bottom-header e menu principal */
+.bottom-header {
+    /* Mantenha o bottom-header como está, sem position: relative ou absolute */
+}
+
+.bottom-header nav ul { /* Regra original para desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.bottom-header nav ul li a {
+    color: #fff;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    transition: .3s;
+}
+
+.bottom-header nav ul li a:hover {
+    background-color: #49b146;
+    color: #424147;
+    box-shadow: inset 0 0 8px #0000008a;
+}
+
+.drop-hover {
+    position: relative;
+}
+
+.drop-hover .drop {
+    position: absolute;
+    background-color: #5f5e64; /* Fundo do dropdown no tema CLARO */
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    transition: .3s;
+    z-index: 10;
+    flex-direction: column;
+}
+
+/* Mostra o menu quando passa o mouse */
+.drop-hover:hover .drop {
+    display: flex;
+}
+
+.drop-hover .drop a {
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: .3s;
+}
+
+.drop-hover .drop a:hover {
+    background-color: #49b146;
+    color: #424147;
+}
+
+/* Scroll estilizado */
+.drop-hover .drop::-webkit-scrollbar {
+    width: 8px;
+}
+
+.drop-hover .drop::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.drop-hover .drop::-webkit-scrollbar-thumb {
+    background-color: #49b146;
+    border-radius: 10px;
+    border: 2px solid #5f5e64;
+}
+
+.drop-hover .drop {
+    scrollbar-color: #49b146 #5f5e64;
+    scrollbar-width: thin;
+}
+
+/* --- ESTILOS DA ENGENAGEM E TEMA CLARO/ESCURO --- */
+
+.settings-container {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente em relação ao header */
+    transform: translateY(-50%); /* Ajuste fino para centralização */
+    right: 20px; /* Distância da direita */
+    z-index: 1000;
+    /* Remover top: 20px; para evitar que saia do header */
+}
+
+.settings-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, color 0.3s ease;
+    outline: none;
+    padding: 0;
+    display: block;
+}
+
+.settings-button:hover {
+    color: #49b146;
+}
+
+.settings-button.active {
+    transform: rotate(180deg);
+}
+
+.settings-menu {
+    position: absolute;
+    top: 40px; /* Relativo ao .settings-container */
+    right: 0;
+    background-color: #5f5e64; /* Fundo do menu de configurações no tema CLARO */
+    border: 1px solid #424147; /* Borda no tema CLARO */
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+}
+
+.settings-menu.open {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.settings-menu button {
+    background: none;
+    border: none;
+    color: #fff; /* Cor do texto no tema CLARO */
+    padding: 8px 15px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.settings-menu button:hover {
+    background-color: #49b146;
+    color: #424147; /* Cor do texto no hover do tema CLARO */
+}
+
+/* --- TEMA ESCURO --- */
+
+body.dark-mode header {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .top-header .social-links button {
+    border-color: #333;
+    color: #bbb;
+}
+
+body.dark-mode .top-header .social-links button:hover {
+    background-color: #388e3c;
+    border-color: #388e3c;
+    color: #fff;
+}
+
+body.dark-mode .bottom-header nav ul li a {
+    color: #ddd;
+}
+
+body.dark-mode .bottom-header nav ul li a:hover {
+    background-color: #388e3c;
+    color: #eee;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .drop-hover .drop {
+    background-color: #333;
+}
+
+body.dark-mode .drop-hover .drop a {
+    color: #ddd;
+}
+
+body.dark-mode .drop-hover .drop a:hover {
+    background-color: #388e3c;
+    color: #eee;
+}
+
+body.dark-mode .settings-button {
+    color: #eee;
+}
+
+body.dark-mode .settings-button:hover {
+    color: #49b146;
+}
+
+body.dark-mode .settings-menu {
+    background-color: #333;
+    border-color: #1a1a1a;
+}
+
+body.dark-mode .settings-menu button {
+    color: #ddd;
+}
+
+body.dark-mode .settings-menu button:hover {
+    background-color: #388e3c;
+    color: #eee;
+}
+
+/* --- Estilos para a seção da linguagem (.language-info) e FEATURE CARDS --- */
+/* Este é o card de conteúdo que você usa para as páginas de linguagem (HTML, CSS, JS, etc.) */
+.language-info {
+    max-width: 800px;
+    margin: 40px auto 60px auto;
+    text-align: left;
+    background-color: #ffffff; /* Fundo branco para o card no tema CLARO */
+    padding: 30px 40px;
+    border-radius: 12px;
+    color: #333; /* Cor do texto escuro para o card no tema CLARO */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra mais suave no tema CLARO */
+}
+
+/* Modo escuro para o card de informações da linguagem */
+body.dark-mode .language-info {
+    background-color: #333; /* Fundo mais escuro para o card no modo escuro */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Sombra mais forte no modo escuro */
+    color: #eee; /* Cor do texto clara para o card no modo escuro */
+}
+
+body.dark-mode .language-info h1,
+body.dark-mode .language-info h2 {
+    color: #49b146; /* Mantém o destaque dos títulos no modo escuro */
+}
+
+body.dark-mode .language-info pre { /* Ajusta o estilo do bloco de código no modo escuro */
+    background-color: #444;
+    border-left-color: #388e3c;
+    color: #eee;
+}
+
+.language-info h1,
+.language-info h2,
+.language-info h3 {
+    font-family: "Oswald", sans-serif;
+    color: #49b146;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.language-info h1 {
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+.language-info h2 {
+    font-size: 2rem;
+}
+
+.language-info p {
+    font-size: 1.15rem;
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+.language-info ul {
+    list-style: disc;
+    font-size: 1rem;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.language-info ul li {
+    padding: 5px 0;
+}
+
+/* Estilo para blocos de código */
+.language-info pre {
+    background-color: #f0f0f0; /* Fundo claro para o bloco de código no tema CLARO */
+    color: #333; /* Cor do texto escura no código no tema CLARO */
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #49b146;
+}
+
+/* Estilo para o texto dentro do código, caso você use <code> dentro de <pre> */
+.language-info pre code {
+    display: block;
+    white-space: pre-wrap;
+}
+
+/* Estilo para a imagem dentro do card */
+section.language-info img {
+    display: block;
+    background-color: #e0e0e0; /* Fundo claro para a imagem no tema CLARO */
+    height: 230px;
+    width: 230px;
+    object-fit: contain;
+    margin: 0 auto 30px auto;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+/* Modo escuro para a imagem dentro do card */
+body.dark-mode section.language-info img {
+    background-color: #555; /* Fundo mais escuro para a imagem no modo escuro */
+}
+
+
+/* Links dentro do conteúdo */
+.language-info a {
+    color: #49b146;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.language-info a:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
+/* --- CORREÇÕES PARA FEATURE CARDS (index.html) --- */
+
+/* ADICIONADO: Container para os Feature Cards na página inicial */
+/* Este container deve envolver todos os .feature-card no seu HTML */
+.feature-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    gap: 30px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards no desktop */
+    padding: 40px 2%; /* Adiciona um padding geral ao container */
+    max-width: 1280px; /* Limita a largura para centralizar o bloco de cards */
+    margin: 0 auto; /* Centraliza o container de cards */
+}
+
+.feature-card {
+    background-color: #f0f0f0; /* Fundo do card no tema CLARO */
+    color: #333; /* Cor do texto no card no tema CLARO */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* CENTRALIZAR TEXTO AQUI */
+    display: flex; /* Para flexbox e alinhar o botão no final */
+    flex-direction: column; /* Para alinhar o botão no final */
+    justify-content: space-between; /* Para alinhar o botão no final */
+    /* ADICIONADO: Largura para cards no desktop. Ajuste conforme sua preferência. */
+    width: calc(33.333% - 20px); /* 3 cards por linha com gap */
+    min-width: 280px; /* Largura mínima para evitar que fiquem muito pequenos no desktop */
+}
+
+body.dark-mode .feature-card {
+    background-color: #424147;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.feature-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #49b146;
+}
+
+.feature-card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    text-align: center; /* CENTRALIZAR TEXTO AQUI TAMBÉM */
+    max-width: none;
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço extra para empurrar o botão */
+}
+
+/* --- CORREÇÃO DOS BOTÕES DENTRO DOS FEATURE CARDS --- */
+.feature-card .feature-button { /* Use a classe .feature-button para ser mais específico */
+    display: inline-block;
+    background-color: #49b146; /* Cor verde para o botão no tema CLARO */
+    color: #424147; /* Cor do texto no botão no tema CLARO */
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: auto; /* Garante que o botão fique no final do card */
+}
+
+body.dark-mode .feature-card .feature-button {
+    background-color: #388e3c; /* Verde mais escuro para o botão no tema ESCURO */
+    color: #eee; /* Cor do texto clara no botão no tema ESCURO */
+}
+
+.feature-card .feature-button:hover {
+    background-color: #3a8e34; /* Verde mais escuro no hover do tema CLARO */
+    color: white;
+}
+
+body.dark-mode .feature-card .feature-button:hover {
+    background-color: #218838; /* Verde ainda mais escuro no hover do tema ESCURO */
+    color: white;
+}
+
+
+/* Transições para todo o corpo, garantindo suavidade */
+body,
+body * {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+}
+
+/* ==================================== */
+/* MEDIA QUERIES (RESPONSIVIDADE)       */
+/* ==================================== */
+
+/* Para telas menores que 768px (smartphones e tablets pequenos) */
+@media screen and (max-width: 768px) {
+    .interface {
+        padding: 0 2%;
+    }
+
+    /* HEADER */
+    .top-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 0;
+    }
+
+    .logotipo img {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .social-links button {
+        padding: 8px;
+        font-size: 1.1em;
+    }
+
+    /* Ajuste para o bottom-header e menu principal no mobile */
+    .bottom-header {
+        width: 100%;
+        position: relative; /* ADICIONADO: Para que o menu-toggle se posicione em relação a ele */
+        z-index: 999;
+    }
+
+    .bottom-header nav.menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 20px;
+        position: relative;
+        height: 60px;
+        background-color: #424147;
+    }
+    body.dark-mode .bottom-header nav.menu {
+        background-color: #1a1a1a;
+    }
+
+
+    /* Oculta os itens do menu principal em desktop */
+    .bottom-header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+        text-align: center;
+        position: fixed;
+        top: 120px; /* Alinhar abaixo do header */
+        left: 0;
+        right: 0;
+        background-color: #424147;
+        z-index: 998;
+        padding: 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    body.dark-mode .bottom-header nav.menu .main-nav-list {
+        background-color: #2b2b2b;
+    }
+
+
+    .bottom-header nav.menu .main-nav-list.active {
+        display: flex;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .bottom-header nav.menu .main-nav-list li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .bottom-header nav.menu .main-nav-list li:last-child {
+        border-bottom: none;
+    }
+
+    .bottom-header nav.menu .main-nav-list li a {
+        color: #fff;
+        padding: 18px 20px;
+        text-decoration: none;
+        font-weight: 600;
+        display: block;
+        transition: background-color .3s, color .3s;
+        font-size: 1.2em;
+    }
+
+    .bottom-header nav.menu .main-nav-list li a:hover {
+        background-color: #49b146;
+        color: #424147;
+    }
+    body.dark-mode .bottom-header nav.menu .main-nav-list li a:hover {
+        background-color: #388e3c;
+        color: #eee;
+    }
+
+    /* Esconde o caret-down no menu em dispositivos menores */
+    .drop-hover a .bi-caret-down-fill {
+        display: none;
+    }
+
+    /* Dropdown do menu em dispositivos menores */
+    .drop {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(0,0,0,0.2);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 0;
+        display: none;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+    body.dark-mode .drop {
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    .drop.active-drop {
+        display: flex !important;
+        flex-direction: column;
+        max-height: 200px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        opacity: 1;
+    }
+
+    .drop a {
+        padding: 12px 30px;
+        font-size: 1.05em;
+        color: #ddd;
+    }
+    body.dark-mode .drop a {
+        color: #eee;
+    }
+
+    .drop a:hover {
+        background-color: #49b146;
+        color: #424147;
+    }
+    body.dark-mode .drop a:hover {
+        background-color: #388e3c;
+        color: #eee;
+    }
+
+    /* Botão Hambúrguer */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2.2em;
+        cursor: pointer;
+        padding: 0;
+        position: absolute;
+        right: 20px; /* Move para a direita do bottom-header */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+    }
+    body.dark-mode .menu-toggle {
+        color: white;
+    }
+
+    /* O settings-container precisa ser ajustado para não conflitar com o menu-toggle */
+    .settings-container {
+        /* No mobile, ajustamos a posição relativa ao header principal */
+        top: 50%; /* Centraliza verticalmente no header */
+        transform: translateY(-50%); /* Ajuste fino */
+        right: 80px; /* Distância da direita, para não bater no menu-toggle */
+        z-index: 1002;
+    }
+
+    /* --- ADICIONADO: AJUSTES PARA OS CARDS NO MOBILE --- */
+
+    /* Container para os Feature Cards e Member Cards */
+    .feature-cards-container, /* Inclui o container de cards da página inicial */
+    .member-cards-container { /* Assumindo que você criará um para a página "Sobre Nós" */
+        flex-direction: column; /* Empilha os cards verticalmente */
+        align-items: center; /* Centraliza os cards */
+        gap: 20px; /* Reduz o espaçamento entre eles no mobile */
+        padding: 20px 4%; /* Ajusta o padding para mobile */
+        max-width: 95%; /* Permite que o container ocupe mais largura da tela */
+        margin: 0 auto; /* Centraliza o container de cards */
+    }
+
+    /* Ajustes para cada feature-card individualmente */
+    .feature-card,
+    .member-card { /* Aplicando também para os cards da página "Sobre Nós" */
+        width: 90%; /* Ocupa a maior parte da largura da tela */
+        max-width: 350px; /* Garante que não fiquem muito largos em tablets */
+        margin: 0 auto; /* Centraliza o card individualmente */
+        padding: 20px; /* Reduz o padding interno */
+    }
+
+    /* --- ADICIONADO: AJUSTES PARA O CONTEÚDO PRINCIPAL DAS PÁGINAS DE LINGUAGEM (.language-info) --- */
+    .language-info {
+        margin: 20px auto 40px auto; /* Reduz margem superior e inferior */
+        padding: 20px 4%; /* Ajusta o padding horizontal para mobile */
+        max-width: 95%; /* Permite que o card ocupe mais largura da tela */
+    }
+
+    /* Ajustes para imagens dentro do language-info */
+    section.language-info img {
+        width: 100%; /* Imagem ocupa 100% da largura do seu container */
+        height: auto; /* Altura automática para manter proporção */
+        max-width: 200px; /* Define uma largura máxima para não ficarem gigantes */
+        margin-bottom: 20px; /* Ajusta a margem inferior */
+    }
+
+    /* Ajustes para tamanhos de fonte em títulos e parágrafos */
+    .language-info h1 {
+        font-size: 2rem; /* Reduz o tamanho do título principal */
+    }
+    .language-info h2 {
+        font-size: 1.6rem; /* Reduz o tamanho dos subtítulos */
+    }
+    .language-info p {
+        font-size: 1em; /* Ajusta o tamanho do parágrafo */
+    }
+    .language-info pre {
+        font-size: 0.9em; /* Reduz a fonte do código */
+        padding: 15px; /* Reduz o padding do bloco de código */
+    }
+}
+
+/* Para telas menores que 480px (smartphones muito pequenos) */
+@media screen and (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+    .hero-section p {
+        font-size: 0.9em;
+    }
+    .hero-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .content-section h2 {
+        font-size: 1.6em;
+    }
+    .content-section p {
+        font-size: 0.9em;
+    }
+    /* Estilos para sobre.html, se aplicável */
+    .member-card {
+        padding: 15px;
+    }
+    .member-name {
+        font-size: 1.1em;
+    }
+    .member-desc {
+        font-size: 0.85em;
+    }
+    .instagram-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Ajuste do settings-container para telas ainda menores */
+    .settings-container {
+        right: 70px; /* Mais próximo da borda direita em telas bem pequenas */
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* CORREÇÃO DO POSICIONAMENTO DO VLIBRAS (Adicione ao final do CSS) */
+/* ------------------------------------------------------------- */
+.vw-access-button {
+    left: 20px !important;
+    right: auto !important;
+    bottom: 20px !important;
+    top: auto !important;
+    z-index: 9999 !important;
+}
+
+/* Ajuste de tamanho e posição para telas menores, se necessário */
+@media screen and (max-width: 480px) {
+    .vw-access-button {
+        left: 10px !important;
+        bottom: 10px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.8em !important;
+    }
+}
+
+/* --- Estilos para o Player de Áudio nos Member Cards --- */
+.member-card audio {
+    width: 100%; /* Ocupa a largura total do card */
+    margin-top: 15px; /* Espaçamento acima do player */
+    margin-bottom: 15px; /* Espaçamento abaixo do player e acima do botão */
+    height: 30px; /* Altura para manter compacto */
+    background-color: #e0e0e0; /* Cor de fundo no tema CLARO */
+    border-radius: 5px;
+    outline: none; /* Remove a borda de foco padrão */
+}
+
+/* Estilos para o player de áudio no tema ESCURO */
+body.dark-mode .member-card audio {
+    background-color: #333; /* Fundo mais escuro para o player */
+}
+
+/* Estilizando os controles internos do player (limitado e pode variar entre navegadores) */
+/* Isso usa pseudo-elementos que não são padronizados e podem não funcionar em todos os navegadores */
+.member-card audio::-webkit-media-controls-panel {
+    background-color: #49b146; /* Cor do painel de controle (verde) */
+    color: #424147; /* Cor do texto/ícones (escuro) */
+}
+
+body.dark-mode .member-card audio::-webkit-media-controls-panel {
+    background-color: #388e3c; /* Verde mais escuro no dark mode */
+    color: #eee;
+}
+
+.member-card audio::-webkit-media-controls-play-button,
+.member-card audio::-webkit-media-controls-volume-slider,
+.member-card audio::-webkit-media-controls-current-time-display,
+.member-card audio::-webkit-media-controls-time-remaining-display {
+    color: inherit; /* Herda a cor do texto/ícones do painel */
+}
+
+.member-card audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+    background-color: #424147; /* Cor do "bolinha" do slider de volume */
+}
+
+body.dark-mode .member-card audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+    background-color: #eee;
+}
+
+
+/* Para Firefox, você pode precisar de algo como: */
+.member-card audio::-moz-range-thumb {
+    background-color: #424147;
+}
+body.dark-mode .member-card audio::-moz-range-thumb {
+    background-color: #eee;
+}
+
+/* Opcional: Para fazer o player parar se outro começar a tocar (via JavaScript) */
+/* Você pode adicionar isso ao seu script.js */
+
+/* --- INÍCIO: ALTERAÇÕES FOCADAS NOS CARDS DE MEMBROS --- */
+
+/* Container geral para os cards de membros - TEMA CLARO PADRÃO */
+.member-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 2%;
+    max-width: 1280px;
+    margin: 50px auto;
+    background-color: #f8f8f8; /* Fundo CLARO para o container no tema CLARO (mesmo do body) */
+    padding-bottom: 70px;
+}
+
+/* Estilos para cada card de membro individual - TEMA CLARO PADRÃO */
+.member-card {
+    background-color: #f0f0f0 !important; /* FORÇANDO O CINZA CLARO */
+    color: #333 !important; /* FORÇANDO O TEXTO ESCURO */
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para o tema claro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(25% - 22.5px);
+    min-width: 250px;
+    max-width: 280px;
+    height: auto;
+    margin: 0;
+}
+
+/* Efeito hover para os cards de membros - TEMA CLARO PADRÃO */
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Descrição/função do membro - TEMA CLARO PADRÃO */
+.member-desc {
+    font-size: 0.9em;
+    color: #888; /* Cor de texto mais suave para o tema CLARO */
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Estilos para o Player de Áudio nos Member Cards - TEMA CLARO PADRÃO */
+.member-card audio {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 30px;
+    background-color: #e0e0e0; /* Cor de fundo no tema CLARO */
+    border-radius: 5px;
+    outline: none;
+}
+.member-card audio::-webkit-media-controls-panel {
+    background-color: #49b146; /* Cor do painel de controle (verde) */
+    color: #424147; /* Cor do texto/ícones (escuro) */
+}
+.member-card audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+    background-color: #424147;
+}
+.member-card audio::-moz-range-thumb {
+    background-color: #424147;
+}
+
+
+/* ------------------ INÍCIO: TEMA ESCURO PARA OS CARDS DE MEMBROS ------------------ */
+
+body.dark-mode .member-cards-container {
+    background-color: #222 !important; /* Fundo escuro para o container dos cards no modo escuro */
+}
+
+body.dark-mode .member-card {
+    background-color: #424147 !important; /* Cor de fundo do card no TEMA ESCURO (seu cinza escuro original) */
+    color: #eee !important; /* Cor do texto clara no modo escuro */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Mantém a sombra mais forte no dark mode hover */
+}
+
+body.dark-mode .member-name {
+    color: #49b146; /* Mantém a cor verde no dark mode */
+}
+
+body.dark-mode .member-desc {
+    color: #ccc; /* Cor de texto mais suave no dark mode */
+}
+
+body.dark-mode .member-card audio {
+    background-color: #333; /* Fundo mais escuro para o player */
+}
+
+body.dark-mode .member-card audio::-webkit-media-controls-panel {
+    background-color: #388e3c; /* Verde mais escuro no dark mode */
+    color: #eee;
+}
+
+body.dark-mode .member-card audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+    background-color: #eee;
+}
+
+body.dark-mode .member-card audio::-moz-range-thumb {
+    background-color: #eee;
+}
+
+/* ------------------ FIM: TEMA ESCURO PARA OS CARDS DE MEMBROS ------------------ */

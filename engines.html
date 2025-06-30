@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Engines de Jogos – Projeto OI</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="icon" href="imagens/engines.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div> 
+    <header>
+        <div class="settings-container">
+            <button class="settings-button" aria-label="Abrir menu de configurações">
+                <i class="bi bi-gear-fill"></i>
+            </button>
+            <div class="settings-menu">
+                <button id="theme-toggle">Tema Escuro</button>
+            </div>
+        </div>
+
+        <section class="top-header">
+            <div class="interface">
+                <div class="logotipo">
+                    <a href="index.html">
+                        <img src="imagens/IFSC_horizontal_marca2015_PNG (1) - Editado.png" alt="Logotipo do site">
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/mod3tds/" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+                    <a href="#" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
+                    <a href="https://www.facebook.com/ifscchapeco/?locale=pt_BR" target="_blank"><button><i class="bi bi-facebook"></i></button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-header">
+            <div class="interface">
+                <nav class="menu">
+                    <button class="menu-toggle" aria-label="Abrir menu">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <ul class="main-nav-list"> <li><a href="index.html">HOME</a></li>
+                        <li><a href="sobre.html">SOBRE NÓS</a></li>
+                        <li><a href="engines.html" class="active">ENGINES</a></li>
+                        <li class="drop-hover">
+                            <a href="#">LINGUAGENS <i class="bi bi-caret-down-fill"></i></a>
+                            <div class="drop">
+                                <a href="html.html">HTML</a>
+                                <a href="css.html">CSS</a>
+                                <a href="javascript.html">JAVASCRIPT</a>
+                                <a href="python.html">PYTHON</a>
+                                <a href="java.html">JAVA</a>
+                                <a href="brainfuck.html">BRAINFUCK</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </header>
+
+    <main class="interface" style="padding: 40px 4%;">
+        <section class="language-info">
+            <img src="imagens/gif engines.gif" alt="Gráfico de Engines de Jogos" class="language-logo" >
+            <h1>O que são Engines de Jogos?</h1>
+            <p>Um <b>Engine de Jogo</b>, ou <b>Motor de Jogo</b>, é um software que proporciona uma estrutura e um conjunto de ferramentas robustas para o desenvolvimento de jogos de computador, consoles e dispositivos móveis.</p>
+            <p>Essas plataformas permitem que desenvolvedores criem jogos de forma mais rápida e eficiente, fornecendo funcionalidades pré-construídas para tarefas complexas como renderização de gráficos 2D e 3D, simulação de física, manipulação de áudio, animação de personagens, inteligência artificial, detecção de colisões e gerenciamento de recursos.</p>
+
+            <h2>Por que usar uma Engine de Jogos?</h2>
+            <p>Utilizar um motor de jogo acelera significativamente o processo de desenvolvimento e oferece uma série de benefícios:</p>
+            <ul>
+                <li><b>Produtividade:</b> Ferramentas visuais e sistemas pré-implementados reduzem a necessidade de escrever código do zero para cada funcionalidade.</li>
+                <li><b>Reaproveitamento:</b> Componentes e lógicas podem ser facilmente reutilizados em diferentes partes do mesmo jogo ou em projetos futuros.</li>
+                <li><b>Multiplataforma:</b> Muitas engines permitem exportar o jogo para diversas plataformas (PC, consoles, mobile) a partir de uma única base de código.</li>
+                <li><b>Otimização:</b> Motores bem estabelecidos já vêm com otimizações de performance e recursos gráficos avançados.</li>
+            </ul>
+
+            <h2>Engines Populares no Mercado</h2>
+
+            <h3>Unity</h3>
+            <p>Uma das engines mais populares e versáteis, a <b>Unity</b> é amplamente utilizada para desenvolver jogos 2D e 3D, realidade virtual (VR) e realidade aumentada (AR). Sua flexibilidade a torna ideal tanto para desenvolvedores independentes quanto para grandes estúdios.</p>
+            <ul>
+                <li><b>Linguagem Principal:</b> C#</li>
+                <li><b>Usos Comuns:</b> Jogos para PC, mobile, consoles, VR/AR, simulações.</li>
+                <li><b>Exemplos de Jogos:</b> Cuphead, Ori and the Blind Forest, Hollow Knight, Among Us, Pokémon GO.</li>
+            </ul>
+
+            <h3>Unreal Engine</h3>
+            <p>Conhecida por seus gráficos de ponta e capacidades de renderização fotorrealistas, a <b>Unreal Engine</b> é a escolha ideal para jogos AAA e experiências imersivas. Além de C++, ela oferece o sistema de programação visual Blueprints, que facilita o desenvolvimento sem a necessidade de muito código.</p>
+            <ul>
+                <li><b>Linguagem Principal:</b> C++ (com Blueprints para programação visual).</li>
+                <li><b>Usos Comuns:</b> Jogos de alta fidelidade, simulações avançadas, filmes, arquitetura.</li>
+                <li><b>Exemplos de Jogos:</b> Fortnite, Gears of War, Kingdom Hearts III, Valorant.</li>
+            </ul>
+
+            <h3>Godot Engine</h3>
+            <p>Uma engine open-source e leve que tem ganhado destaque por sua comunidade ativa e facilidade de uso. A <b>Godot</b> é excelente para jogos 2D e 3D mais simples, prototipagem e para quem busca uma alternativa gratuita e de código aberto.</p>
+            <ul>
+                <li><b>Linguagem Principal:</b> GDScript (linguagem própria, semelhante ao Python), C#, C++.</li>
+                <li><b>Usos Comuns:</b> Jogos indie 2D e 3D, prototipagem, aplicações interativas.</li>
+                <li><b>Exemplos de Jogos:</b> Brotato, Dome Keeper, Sonic Colors: Ultimate (port).</li>
+            </ul>
+
+            <h2>Vantagens e Desvantagens das Engines</h2>
+            <ul>
+                <li><b>Vantagens:</b>
+                    <ul>
+                        <li>Redução do tempo de desenvolvimento.</li>
+                        <li>Ferramentas robustas e otimizadas.</li>
+                        <li>Suporte a múltiplas plataformas.</li>
+                        <li>Acesso a comunidades e recursos vastos.</li>
+                    </ul>
+                </li>
+                <li><b>Desvantagens:</b>
+                    <ul>
+                        <li>Curva de aprendizado pode ser alta para engines complexas.</li>
+                        <li>Dependência das ferramentas e filosofias da engine.</li>
+                        <li>Licenças e custos podem ser um fator para grandes projetos (embora muitas ofereçam opções gratuitas ou com royalties).</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <h4>©2025 By DavidjGreens & Enzo Brancher</h4>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/0b6d1a1fba.js" crossorigin="anonymous"></script>
+    <script src="script.js?v=2025060908"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>
