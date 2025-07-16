@@ -979,3 +979,176 @@ body.dark-mode .member-card audio::-moz-range-thumb {
 }
 
 /* ------------------ FIM: TEMA ESCURO PARA OS CARDS DE MEMBROS ------------------ */
+
+/* --- Seção de Estilos para o Chat (chat.html) --- */
+
+/* Variáveis de cor (opcional, mas bom para consistência e tema) */
+:root {
+    --primary-color: #49b146; /* Verde principal */
+    --secondary-color: #424147; /* Cinza escuro */
+    --text-color: #333; /* Cor do texto padrão (claro) */
+    --body-background-color: #f8f8f8; /* Fundo do corpo padrão (claro) */
+    --card-background-color: #ffffff; /* Fundo de cards padrão (claro) */
+    --border-color: #ddd; /* Cor da borda padrão (claro) */
+    --accent-color: #49b146; /* Cor de destaque (botões, links) */
+    --accent-color-hover: #3a8e34; /* Cor de destaque hover */
+    --button-text-color: #424147; /* Cor do texto em botões de destaque */
+    --secondary-background-color: #f0f0f0; /* Fundo de mensagens da IA (claro) */
+    --secondary-button-color: #5f5e64; /* Cor para botão 'Nova Conversa' (claro) */
+    --secondary-button-color-hover: #4d4c51; /* Hover para 'Nova Conversa' (claro) */
+}
+
+/* Modo escuro - Sobrescreve as variáveis */
+body.dark-mode {
+    --text-color: #eee;
+    --body-background-color: #222;
+    --card-background-color: #333;
+    --border-color: #555;
+    --accent-color: #388e3c;
+    --accent-color-hover: #218838;
+    --button-text-color: #eee;
+    --secondary-background-color: #444;
+    --secondary-button-color: #38373d;
+    --secondary-button-color-hover: #2a292e;
+}
+
+
+.chat-container {
+    background-color: var(--card-background-color);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70vh; /* Altura para o container do chat */
+}
+
+.chat-container h1 {
+    text-align: center;
+    color: var(--primary-color); /* Usando a variável de cor principal */
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif; /* Garante a fonte correta para o título */
+}
+
+.chat-messages {
+    flex-grow: 1; /* Faz com que ocupe o espaço disponível */
+    overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--body-background-color); /* Fundo das mensagens */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre as mensagens */
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 18px;
+    border-radius: 20px;
+    line-height: 1.5;
+    word-wrap: break-word; /* Garante que o texto quebre */
+    font-size: 1.05em;
+    color: var(--text-color); /* Cor do texto genérica para mensagem */
+}
+
+.user-message {
+    background-color: var(--accent-color); /* Cor de destaque para mensagens do usuário */
+    color: var(--button-text-color); /* Texto claro no botão de destaque */
+    align-self: flex-end; /* Alinha à direita */
+    border-bottom-right-radius: 5px; /* Detalhe na borda */
+}
+
+.ia-message {
+    background-color: var(--secondary-background-color); /* Cor mais neutra para IA */
+    color: var(--text-color);
+    align-self: flex-start; /* Alinha à esquerda */
+    border-bottom-left-radius: 5px; /* Detalhe na borda */
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.chat-input-area #chat-input {
+    flex-grow: 1; /* Ocupa o máximo de espaço possível */
+    padding: 15px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 1em;
+    background-color: var(--body-background-color);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.chat-input-area #chat-input:focus {
+    border-color: var(--accent-color);
+}
+
+.chat-input-area button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap; /* Evita quebra de linha no botão */
+}
+
+.chat-input-area button:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-2px);
+}
+
+.chat-input-area button i {
+    font-size: 1.2em;
+}
+
+#new-chat-button {
+    background-color: var(--secondary-button-color); /* Uma cor diferente para "Nova Conversa" */
+    color: var(--text-color); /* Cor do texto no botão secundário */
+}
+
+#new-chat-button:hover {
+    background-color: var(--secondary-button-color-hover);
+}
+
+/* Responsividade para o chat */
+@media screen and (max-width: 768px) {
+    .chat-container {
+        padding: 20px;
+        height: 80vh;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .chat-input-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .chat-input-area #chat-input,
+    .chat-input-area button {
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+        justify-content: center;
+    }
+    .chat-input-area #new-chat-button {
+        order: -1; /* Move o botão de nova conversa para cima */
+    }
+}
