@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function getIaResponse(userMessage) {
         try {
             // Esta URL DEVE APONTAR PARA O SEU BACKEND
-            const response = await fetch('http://localhost:3000/api/chat', {
+            const response = await fetch('https://nsldp-backend.onrender.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
