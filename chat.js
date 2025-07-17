@@ -1,87 +1,96 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Obtém referências aos elementos HTML do chat
     const chatMessages = document.getElementById('chat-messages');
     const chatInput = document.getElementById('chat-input');
     const sendMessageButton = document.getElementById('send-message-button');
-    const newChatButton = document.getElementById('new-chat-button');
+    const newChatButton = document.getElementById('new-chat-button');.
+    const BACKEND_URL = 'https://nsldp-backend.onrender.com/api/chat';
 
-    // Função para adicionar mensagem ao chat
+    // 3. Função para adicionar mensagens ao display do chat
     function addMessage(message, sender) {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', `${sender}-message`);
         messageElement.textContent = message;
         chatMessages.appendChild(messageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight; // Scrolla para a última mensagem
+        // Garante que o scroll esteja sempre no final, mostrando a última mensagem
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Função para obter resposta da IA (agora do seu backend)
+    // 4. Função assíncrona para enviar a mensagem do usuário ao backend
     async function getIaResponse(userMessage) {
         try {
-            // Esta URL DEVE APONTAR PARA O SEU BACKEND
-            const response = await fetch('https://nsldp-backend.onrender.com', {
+            // Realiza uma requisição POST para o seu backend
+            const response = await fetch(BACKEND_URL, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json', // Informa que o corpo da requisição é JSON
                 },
-                body: JSON.stringify({ message: userMessage }),
+                body: JSON.stringify({ message: userMessage }), // Converte a mensagem do usuário em JSON
             });
 
+            // Verifica se a resposta da rede foi bem-sucedida (status 2xx)
             if (!response.ok) {
-                // Se a resposta do servidor não for 200 OK, lança um erro
+                // Se a resposta não for OK, tenta ler o erro do corpo da resposta JSON
                 const errorData = await response.json();
                 throw new Error(errorData.error || 'Erro desconhecido do servidor.');
             }
 
+            // Analisa a resposta JSON do backend
             const data = await response.json();
-            return data.reply; // Supondo que seu backend retorna um JSON com uma propriedade 'reply'
+            // Retorna a resposta da IA (seu backend deve enviar a resposta da IA na propriedade 'reply')
+            return data.reply;
         } catch (error) {
             console.error('Erro ao obter resposta da IA (frontend):', error);
+            // Retorna uma mensagem de erro amigável para o usuário
             return "Desculpe, não consegui me conectar com a inteligência artificial no momento. Tente novamente mais tarde.";
         }
     }
 
-    // Função para enviar mensagem
+    // 5. Função principal para enviar uma mensagem do usuário
     async function sendMessage() {
-        const userMessage = chatInput.value.trim();
-        if (userMessage === '') return; // Não envia mensagens vazias
+        const userMessage = chatInput.value.trim(); // Pega o texto do input e remove espaços em branco
+        if (userMessage === '') return; // Não faz nada se a mensagem estiver vazia
 
-        addMessage(userMessage, 'user');
-        chatInput.value = ''; // Limpa o input
+        addMessage(userMessage, 'user'); // Adiciona a mensagem do usuário ao chat
+        chatInput.value = ''; // Limpa o campo de input
 
-        // Adiciona uma mensagem de "digitando..." ou um loader visual
+        // Adiciona um indicador visual de que a IA está "digitando"
         const typingIndicator = document.createElement('div');
         typingIndicator.classList.add('message', 'ia-message');
-        typingIndicator.textContent = 'IA está digitando...'; // Ou um GIF de loader
+        typingIndicator.textContent = 'IA está digitando...';
         chatMessages.appendChild(typingIndicator);
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         try {
+            // Chama a função para obter a resposta da IA do backend
             const iaResponse = await getIaResponse(userMessage);
             chatMessages.removeChild(typingIndicator); // Remove o indicador de digitação
-            addMessage(iaResponse, 'ia');
+            addMessage(iaResponse, 'ia'); // Adiciona a resposta da IA ao chat
         } catch (error) {
             chatMessages.removeChild(typingIndicator); // Remove o indicador mesmo em caso de erro
-            addMessage("Erro: Não foi possível obter resposta da IA. " + error.message, 'ia');
+            addMessage("Erro: Não foi possível obter resposta da IA. " + error.message, 'ia'); // Exibe mensagem de erro
             console.error("Erro completo ao enviar mensagem:", error);
         }
     }
 
-    // Event listener para o botão de enviar
+    // 6. Configura os Event Listeners
+    // Ao clicar no botão de enviar, a função sendMessage é chamada
     sendMessageButton.addEventListener('click', sendMessage);
 
-    // Event listener para a tecla Enter no input
+    // Ao pressionar Enter no campo de input, a função sendMessage é chamada
     chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-            e.preventDefault(); // Previne quebra de linha no input
+            e.preventDefault(); // Evita quebra de linha padrão no input ao pressionar Enter
             sendMessage();
         }
     });
 
-    // Event listener para o botão de nova conversa
+    // Ao clicar no botão de nova conversa, limpa o chat e adiciona mensagem de boas-vindas
     newChatButton.addEventListener('click', () => {
-        chatMessages.innerHTML = ''; // Limpa todas as mensagens
-        addMessage("Olá! Sou seu assistente de IA. Como posso ajudar hoje?", 'ia'); // Mensagem de boas-vindas
+        chatMessages.innerHTML = ''; // Limpa todas as mensagens do chat
+        addMessage("Olá! Sou seu assistente de IA. Como posso ajudar hoje?", 'ia'); // Mensagem de boas-vindas inicial
     });
 
-    // Mensagem de boas-vindas inicial ao carregar a página
+    // 7. Mensagem de boas-vindas inicial ao carregar a página
     addMessage("Olá! Sou seu assistente de IA. Como posso ajudar hoje?", 'ia');
 });
