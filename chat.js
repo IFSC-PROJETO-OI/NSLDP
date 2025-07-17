@@ -3,7 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chat-messages');
     const chatInput = document.getElementById('chat-input');
     const sendMessageButton = document.getElementById('send-message-button');
-    const newChatButton = document.getElementById('new-chat-button');.
+    const newChatButton = document.getElementById('new-chat-button');
+
+    // **2. Configuração da URL do Backend (CRÍTICO!)**
+    // Esta é a URL base do seu serviço Render, seguida pela rota da API de chat.
+    // Certifique-se de que "https://nsldp-backend.onrender.com" é a URL exata do seu serviço no Render.
+    // O "/api/chat" é a rota que seu backend (server.js) está esperando para o chat.
     const BACKEND_URL = 'https://nsldp-backend.onrender.com/api/chat';
 
     // 3. Função para adicionar mensagens ao display do chat
