@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Esta é a URL base do seu serviço Render, seguida pela rota da API de chat.
     // Certifique-se de que "https://nsldp-backend.onrender.com" é a URL exata do seu serviço no Render.
     // O "/api/chat" é a rota que seu backend (server.js) está esperando para o chat.
-    const BACKEND_URL = 'https://nsldp-backend.onrender.com/api/chat';
+    const BACKEND_URL = 'https://nsldp-backend.onrender.com/api/chat'; // <-- Esta é a URL CORRETA!
 
     // 3. Função para adicionar mensagens ao display do chat
     function addMessage(message, sender) {
